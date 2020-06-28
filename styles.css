@@ -1,0 +1,243 @@
+:root {
+  --background: #03071e;
+  --background-light: rgba(255, 255, 255, 0.1);
+  --color-light: #fff;
+  --font-main: 'Muli', sans-serif;
+}
+
+body {
+  margin: 0px;
+  background: linear-gradient(#03071e, #370617);
+  font-family: var(--font-main);
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+
+.header {
+  background-color: var(--background);
+  width: 100%;
+  height: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header__img {
+  width: 200px;
+  margin-top: 10px;
+  margin-left: 10px;
+}
+
+.header__menu {
+  margin-right: 30px;
+}
+
+.header__menu ul {
+  display: none;
+  list-style: none;
+  padding: 0px;
+  position: absolute;
+  width: 100px;
+  text-align: right;
+  margin: 0px 0px 0px -14px;
+}
+
+.header__menu:hover ul,
+ul:hover {
+  display: block;
+}
+
+.header__menu li {
+  margin: 10px 0px;
+}
+
+.header__menu li a {
+  color: var(--color-light);
+  text-decoration: none;
+}
+
+.header__menu li a:hover {
+  text-decoration: underline;
+}
+
+.header__menu--profile {
+  margin-right: 8px;
+  display: flex;
+  align-items: center;
+}
+
+.header__menu--profile img {
+  margin-right: 8px;
+  width: 40px;
+  height: 40px;
+}
+
+.header__menu--profile p {
+  margin: 0px;
+  color: var(--color-light);
+}
+
+/* Main  */
+
+.main {
+  height: 200px;
+  padding-top: 90px;
+}
+
+.main__title {
+  color: var(--color-light);
+  font-size: 25px;
+  text-align: center;
+}
+
+.categories__title {
+  color: #fff;
+  font-size: 16px;
+  position: absolute;
+  padding-left: 30px;
+  width: 100%;
+}
+
+.input {
+  background-color: var(--background-light);
+  border: 2px solid var(--color-light);
+  border-radius: 50px;
+  color: var(--color-light);
+  font-family: var(--font-main);
+  font-size: 16px;
+  height: 50px;
+  padding: 0px 20px;
+  width: 50%;
+  outline: 0;
+  display: block;
+  margin: 0 auto;
+}
+
+::placeholder {
+  color: var(--color-light);
+}
+
+/* ::-webkit-scrollbar {
+  display: none;
+} */
+
+body::-webkit-scrollbar {
+  width: 10px;
+  background: #212d40;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+  border-right: 2px solid #212d40;
+}
+
+.carousel::-webkit-scrollbar {
+  background: #370617;
+}
+
+.carousel::-webkit-scrollbar-thumb {
+  background: #212d40;
+}
+
+.carousel {
+  width: 100%;
+  overflow: scroll;
+  padding: 30px;
+  position: relative;
+}
+
+.carousel__container {
+  white-space: nowrap;
+  margin: 70px 0px;
+  padding-bottom: 10px;
+}
+
+.carousel-item {
+  background-color: #333;
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+  position: relative;
+}
+
+.carousel-item:hover ~ .carousel-item {
+  transform: translate3d(100px, 0, 0);
+}
+
+.carousel__container:hover .carousel-item {
+  opacity: 0.3;
+}
+
+.carousel__container:hover .carousel-item:hover {
+  transform: scale(1.5);
+  opacity: 1;
+}
+
+.carousel-item__img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+
+.carousel-item__details {
+  background-color: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%);
+  font-size: 10px;
+  opacity: 0;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+}
+
+.carousel-item:hover .carousel-item__details {
+  opacity: 1;
+}
+
+.carousel-item__details-icons {
+  width: 20px;
+}
+
+.carousel-item__details--title,
+.carousel-item__details--subtitle {
+  color: var(--color-light);
+  margin: 2px;
+}
+
+.carousel-item__details--title {
+  font-weight: bold;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  width: 100%;
+  background-color: var(--background);
+}
+
+.footer a {
+  color: var(--color-light);
+  cursor: pointer;
+  font-size: 14px;
+  font-family: 'Muli', sans-serif;
+  padding-left: 30px;
+  text-decoration: none;
+}
+
+.footer a:hover {
+  text-decoration: underline;
+}
+
+@media screen and (max-width: 600px) {
+  .footer {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
